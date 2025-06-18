@@ -24,6 +24,7 @@ def run(protocol: protocol_api.ProtocolContext):
 
     #Load Modules
     heater_shaker = protocol.load_module('heaterShakerModuleV1', 'D1')
+    
     heater_shaker.open_labware_latch()
     
     # Load labware
