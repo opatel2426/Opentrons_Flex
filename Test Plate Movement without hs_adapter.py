@@ -24,7 +24,7 @@ def run(protocol: protocol_api.ProtocolContext):
 
     #Load Modules
     heater_shaker = protocol.load_module('heaterShakerModuleV1', 'D1')
-
+    
     # Load labware
     hs_plate = protocol.load_labware('opentrons_96_wellplate_200ul_pcr_full_skirt', 'A2')
 
