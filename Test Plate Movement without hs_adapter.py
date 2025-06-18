@@ -28,7 +28,7 @@ def run(protocol: protocol_api.ProtocolContext):
     heater_shaker.open_labware_latch()
     
     # Load labware
-    hs_plate = hs.load_labware('opentrons_96_wellplate_200ul_pcr_full_skirt', 'A2')
+    hs_plate = hs.load_labware('deep_well_plate_with_universal_adapt', 'A2')
 
     #Move hs_plate onto heater shaker
     protocol.move_labware(labware=hs_plate, new_location=heater_shaker, use_gripper=True)
