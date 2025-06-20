@@ -21,12 +21,9 @@ requirements = {
 def run(protocol: protocol_api.ProtocolContext):
     #Load Modules
     heater_shaker = protocol.load_module('heaterShakerModuleV1', 'D1')
-
-    # Load adapters
-    #hs = heater_shaker.load_adapter('opentrons_universal_flat_adapter')
     
     # Load labware
-    hs_plate = protocol.load_labware('deep_well_plate_with_universal_adapt', 'A2')
+    hs_plate = protocol.load_labware('opentrons_96_wellplate_200ul_pcr_full_skirt', 'A2')
 
     #Move hs_plate onto heater shaker
     heater_shaker.open_labware_latch()
