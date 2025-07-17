@@ -47,7 +47,7 @@ def run(protocol: protocol_api.ProtocolContext):
     heater_shaker.open_labware_latch()
 
     #set the temp module to 0c
-    temp_module.set_temperature(celsius=4)
+    temp_module.set_temperature(celsius=10)
     
     # Load labware
     partial_50 = protocol.load_labware(load_name="opentrons_flex_96_filtertiprack_50ul",location="B3")
