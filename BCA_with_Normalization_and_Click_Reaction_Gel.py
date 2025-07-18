@@ -363,7 +363,7 @@ def run(protocol: protocol_api.ProtocolContext):
                             new_tip='always')
 
     # Step 11: shake the sample plate for click reaction
-    protocol.move_labware(labware=plate3, new_location=plate_adapter, use_gripper=True)
+    protocol.move_labware(labware=plate3, new_location=heater_shaker, use_gripper=True)
     heater_shaker.close_labware_latch()
     heater_shaker.set_and_wait_for_shake_speed(1000)
     protocol.delay(minutes=60)
