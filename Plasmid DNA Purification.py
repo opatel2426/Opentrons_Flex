@@ -53,7 +53,7 @@ def run(protocol: protocol_api.ProtocolContext):
 
     # Reservoir assignments for washes and digestion
     temp_adapter['A1'].load_liquid(liquid=digested_plasmid, volume = 1500)
-    temp_adapter['A1'].load_liquid(liquid=digested_plasmid, volume = 1500)
+    temp_adapter['A2'].load_liquid(liquid=digested_plasmid, volume = 1500)
 
     #Load pipettes
     p50_multi = protocol.load_instrument('flex_8channel_50', 'left') 
