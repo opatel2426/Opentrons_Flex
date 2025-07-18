@@ -182,8 +182,9 @@ def run(protocol: protocol_api.ProtocolContext):
         p1000_multi.transfer(normalized_volume, temp_adapter[source_well], plate3[destination_well], rate=0.5, new_tip='once')
         p1000_multi.transfer(diluent_volume, reservoir['A7'], plate3[destination_well], rate=0.5, new_tip='once')
 
-    # ---------------- Click Reaction ----------------
+     # ---------------- Click Reaction ----------------
     protocol.comment("Running click reaction")
+    protocol.move_labware(labware=partial_50, new_location='B3', use_gripper=True)
     p50_multi.configure_nozzle_layout(style=SINGLE, start="A1", tip_racks=[partial_50]) #,
     
     #Pipette rhodamine azide (d2), tbta (d4), cuso4 (d1), and tcep (d3)
@@ -216,15 +217,13 @@ def run(protocol: protocol_api.ProtocolContext):
     p50_multi.distribute(6, 
                             temp_adapter['D6'], 
                             [plate3[i] for i in destination_wells],
-                            rate=speed-0.05,
+                            rate=speed-0.1,
                             mix_before=(3, 30),
                             mix_after=(3, 30), 
                             new_tip='always')
-    del hs_adapter
-    plate_adapter = heater_shaker.load_adapter('opentrons_96_pcr_adapter') #opentrons_96_flat_bottom_adapter
 
     # Step 11: shake the sample plate for click reaction
-    protocol.move_labware(labware=plate3, new_location=plate_adapter, use_gripper=True)
+    protocol.move_labware(labware=plate3, new_location=heater_shaker, use_gripper=True)
     heater_shaker.close_labware_latch()
     heater_shaker.set_and_wait_for_shake_speed(1000)
     protocol.delay(minutes=60)
