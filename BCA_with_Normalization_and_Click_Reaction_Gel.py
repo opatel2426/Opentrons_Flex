@@ -371,7 +371,7 @@ def run(protocol: protocol_api.ProtocolContext):
 
     # Add the loading buffer and move to the thermocylcer to seal and store.
     p50_multi.configure_nozzle_layout(style=ALL, tip_racks=[partial_50])
-    p50_multi.distribute(34, 
+    p50_multi.distribute(50, 
                             reservoir['A9'], 
                             [plate3[i].bottom(z=7) for i in destination_wells], 
                             #mix_after=(3, 40), 
