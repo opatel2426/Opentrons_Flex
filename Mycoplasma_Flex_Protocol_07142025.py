@@ -26,7 +26,6 @@ def run(protocol: protocol_api.ProtocolContext):
     primer_vol = 1
     sample_vol = 2.5
     water_vol = 9
-
     # Step 4: Gel preparation and loading (manual step for now)
     protocol.comment("This protcol runs pcr assay for mycoplasma contamination.")
     
@@ -128,6 +127,8 @@ def run(protocol: protocol_api.ProtocolContext):
         sample_well_map[f"sample_{sample_idx+1}"] = next_wells
     
     #Add the positive control and no template control to the number of samples
+
+
     # Transfer positive control to A1
     p50_multi.distribute(2.5,
                          temp_adapter['A4'],
