@@ -18,7 +18,7 @@ def run(protocol: protocol_api.ProtocolContext):
     # Enter the number of samples 
     speed= 0.5
     target_concentration = 1
-    num_samples = 1
+    num_samples = 16
     num_replicates = 2
     numtotalSamples = num_samples + (2*num_replicates)
     reaction_vol = 25
